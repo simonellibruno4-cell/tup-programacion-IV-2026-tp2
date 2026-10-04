@@ -1,0 +1,35 @@
+### obtener todos los rectángulos
+GET http://localhost:3000/rectangulos
+
+### crear un rectángulo válido
+POST http://localhost:3000/rectangulos
+Content-Type: application/json
+
+{
+  "lado1": 10,
+  "lado2": 5
+}
+
+### probar validación con valor inválido (lado1 menor a 0)
+POST http://localhost:3000/rectangulos
+Content-Type: application/json
+
+{
+  "lado1": -2,
+  "lado2": 5
+}
+
+### obtener rectángulo por ID
+GET http://localhost:3000/rectangulos/1
+
+### modificar un rectángulo
+PUT http://localhost:3000/rectangulos/1
+Content-Type: application/json
+
+{
+  "lado1": 8,
+  "lado2": 4
+}
+
+### eliminar un rectángulo
+DELETE http://localhost:3000/rectangulos/1
