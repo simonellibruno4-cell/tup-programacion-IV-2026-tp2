@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS tp2_ejercicio3;
+USE tp2_ejercicio3;
+
+CREATE TABLE IF NOT EXISTS alumnos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    dni VARCHAR(20) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS calificaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    alumno_id INT NOT NULL,
+    materia VARCHAR(100) NOT NULL,
+    nota DECIMAL(4,2) NOT NULL,
+    fecha DATE,
+    FOREIGN KEY (alumno_id) REFERENCES alumnos(id) ON DELETE CASCADE
+);

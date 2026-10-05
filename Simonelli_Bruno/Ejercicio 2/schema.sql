@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS tp2_ejercicio2;
+USE tp2_ejercicio2;
+
+CREATE TABLE IF NOT EXISTS tareas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(150) NOT NULL,
+    descripcion TEXT,
+    completada BOOLEAN DEFAULT FALSE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
